@@ -23,6 +23,7 @@ def sp_train():
                         '(will be used as-is if exists)')
     arg('sp_model_prefix', help='path (prefix) to output sentencepiece model')
     arg('--vocab-size', type=int, default=50000)
+    arg('--input-sentence-size', type=int , default=0)
     arg('--character-coverage', type=float, default=1.0)
     args = parser.parse_args()
 
@@ -63,6 +64,8 @@ def sp_train():
         f'--unk_piece={UNK}',
         f'--control_symbols={END_OF_LINE},{END_OF_TEXT}',
         f'--character_coverage={args.character_coverage}',
+        f'--shuffle_input_sentence=1',
+        f'--input_sentence_size={args.input_sentence_size}',
     ]))
 
 
