@@ -7,7 +7,7 @@ setup(
         'fire',
         'numpy',
         'sentencepiece',
-        'tensorflow',
+        'tensorflow-gpu',
         'tqdm',
     ],
     entry_points={
